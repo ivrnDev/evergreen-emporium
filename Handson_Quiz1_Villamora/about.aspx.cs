@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Handson_Quiz1_Villamora
+namespace EvergreenEmporium_group11
 {
     public partial class about : System.Web.UI.Page
     {

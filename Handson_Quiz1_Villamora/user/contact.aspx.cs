@@ -1,21 +1,33 @@
-﻿using System;
+﻿using Oracle.ManagedDataAccess.Client;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Oracle.ManagedDataAccess.Client;
-using System.Diagnostics;
 
-namespace EvergreenEmporium_group11
+namespace EvergreenEmporium_group11.user
 {
     public partial class contact : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["Username"] != null)
+            {
+                userLabel.Text = "Welcome, " + Session["Username"].ToString();
+            }
+            else
+            {
+                Response.Redirect("/login.aspx");
+            }
         }
-
+        protected void Logout_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Session.Abandon();
+            Response.Redirect("/landing.aspx");
+        }
         protected void SubmitBtn_Click(object sender, EventArgs e)
         {
             // Get the values from the form
@@ -23,7 +35,7 @@ namespace EvergreenEmporium_group11
             string address = addressInput.Text;
             string gender = RadioButtonList1.SelectedItem.Value;
             string concerns = string.Join(", ", CheckBoxList1.Items.Cast<ListItem>().Where(i => i.Selected).Select(i => i.Value));
-            string comment = TextArea1.Value;           
+            string comment = TextArea1.Value;
 
             string connectionString = "User Id=EVERGREEN;Password=evergreen;Data Source=localhost:1521/xepdb1;";
 
@@ -34,7 +46,7 @@ namespace EvergreenEmporium_group11
                 string sql = "INSERT INTO Contact (contact_id, customer_name, address, gender, customer_concern, customer_comment) VALUES (contact_seq.NEXTVAL, :paramName, :paramAddress, :paramGender, :paramConcerns, :paramComment)";
                 using (OracleCommand cmd = new OracleCommand(sql, conn))
                 {
-                   
+
 
                     cmd.Parameters.Add("paramName", OracleDbType.Varchar2).Value = name;
                     cmd.Parameters.Add("paramAddress", OracleDbType.Varchar2).Value = address;
@@ -62,10 +74,10 @@ namespace EvergreenEmporium_group11
                     {
 
                         Debug.WriteLine("Error: " + ex.Message);
-                     
                     }
                 }
             }
         }
     }
+
 }

@@ -1,10 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="landing.aspx.cs" Inherits="Handson_Quiz1_Villamora.home" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="landing.aspx.cs" Inherits="EvergreenEmporium_group11.home" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Home</title>
+    <title>Evergreen Emporium</title>
     <style type="text/css">
           .auto-style1 {
             width: 53px;
@@ -44,6 +44,13 @@
        
         .auto-style6 {
             background-color: #014421;
+            z-index: 1;
+            left: 38%;
+            top: 549px;
+            position: absolute;
+            width: 327px;
+            height: 49px;
+            cursor: pointer;
         }
        
     </style>
@@ -54,7 +61,7 @@
         <a style="cursor: pointer; list-style: none; color: black; text-decoration: none" href="landing.aspx">
             <asp:Label ID="logoLabel" runat="server" style="z-index: 1; left: 106px; top: 25px; position: absolute; font-size: x-large; font-weight: 700; font-family: Arial, Helvetica, sans-serif" Text="Evergreen Emporium" ForeColor="White"></asp:Label>
             <img alt="logo" class="auto-style1" src="Images/EELogo.png" />
-        </a>
+        </a> 
         <p style="z-index: 1; left: 923px; top: 23px; position: absolute; height: 27px; width: 463px; margin-top: 0px; cursor:default">
             <span class="auto-style2">
                 <a class="auto-style4 link-home" href="landing.aspx">
@@ -77,8 +84,10 @@
     </div>  
         <asp:Label ID="Label1" runat="server" Text="Where Every Leaf Tells a Story, and Every Plant Brings Magic Home." style="color: #FFFFFF; font-weight: 700; text-shadow:0 7px 8px black" CssClass="auto-style5"></asp:Label> 
         <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/cover.jpg" style="z-index: 1; left: 594px; top: 155px; position: absolute; height: 336px; width: 664px; border-radius: 10px; box-shadow: 0 5px 10px 0 black" /> 
+       
          
-        <asp:Button ID="Button1" runat="server" style="border-style: none; border-color: inherit; border-width: medium; z-index: 1; left: 37%; top: 577px; position: absolute; width: 327px; height: 49px; font-weight: 700; font-family: Arial, Helvetica, sans-serif; font-size: x-large; border-radius: 30px; color: #FFFFFF; cursor: pointer; transition: all ease-in 0.4s;" Text="SHOP NOW" OnClick="Button1_Click" CssClass="auto-style6" />
+        <asp:Button ID="Button1" runat="server" style="border-style: none; border-color: inherit; border-width: medium; font-weight: 700; font-family: Arial, Helvetica, sans-serif; font-size: x-large; border-radius: 30px; color: #FFFFFF; transition: all ease-in 0.4s;" Text="SHOP NOW" OnClick="Button1_Click" CssClass="auto-style6" />
+    
          
     </form>
 

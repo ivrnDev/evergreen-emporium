@@ -7,7 +7,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Handson_Quiz1_Villamora {
+namespace EvergreenEmporium_group11
+{
     
     
     public partial class home {

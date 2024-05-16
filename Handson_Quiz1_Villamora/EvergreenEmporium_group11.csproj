@@ -13,8 +13,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Handson_Quiz1_Villamora</RootNamespace>
-    <AssemblyName>Handson_Quiz1_Villamora</AssemblyName>
+    <RootNamespace>EvergreenEmporium_group11</RootNamespace>
+    <AssemblyName>EvergreenEmporium_group11</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -76,6 +76,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.19.1, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.19.3.0\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -95,7 +99,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="about.aspx" />
+    <Content Include="admin\admin.aspx" />
     <Content Include="contact.aspx" />
+    <Content Include="Images\Check-Logo.png" />
+    <Content Include="redirect\contact-success-user.aspx" />
+    <Content Include="redirect\contact-success.aspx" />
+    <Content Include="redirect\order-success.aspx" />
+    <Content Include="user\about.aspx" />
+    <Content Include="user\contact.aspx" />
+    <Content Include="user\home.aspx" />
+    <Content Include="Images\about.jpg" />
     <Content Include="Images\backgroundImage.jpg" />
     <Content Include="Images\cover.jpg" />
     <Content Include="Images\dogpeeping.jpg" />
@@ -116,7 +129,9 @@
       <BrowseToURL>~/landing.aspx</BrowseToURL>
     </Content>
     <Content Include="signup.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="login.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -127,12 +142,61 @@
     <Compile Include="about.aspx.designer.cs">
       <DependentUpon>about.aspx</DependentUpon>
     </Compile>
+    <Compile Include="admin\admin.aspx.cs">
+      <DependentUpon>admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\admin.aspx.designer.cs">
+      <DependentUpon>admin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="contact.aspx.cs">
       <DependentUpon>contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="contact.aspx.designer.cs">
       <DependentUpon>contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="redirect\contact-success-user.aspx.cs">
+      <DependentUpon>contact-success-user.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="redirect\contact-success-user.aspx.designer.cs">
+      <DependentUpon>contact-success-user.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="redirect\contact-success.aspx.cs">
+      <DependentUpon>contact-success.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="redirect\contact-success.aspx.designer.cs">
+      <DependentUpon>contact-success.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="redirect\order-success.aspx.cs">
+      <DependentUpon>order-success.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="redirect\order-success.aspx.designer.cs">
+      <DependentUpon>order-success.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="user\about.aspx.cs">
+      <DependentUpon>about.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="user\about.aspx.designer.cs">
+      <DependentUpon>about.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="user\contact.aspx.cs">
+      <DependentUpon>contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="user\contact.aspx.designer.cs">
+      <DependentUpon>contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="user\home.aspx.cs">
+      <DependentUpon>home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="user\home.aspx.designer.cs">
+      <DependentUpon>home.aspx</DependentUpon>
     </Compile>
     <Compile Include="landing.aspx.cs">
       <DependentUpon>landing.aspx</DependentUpon>
@@ -156,6 +220,9 @@
     <Compile Include="signup.aspx.designer.cs">
       <DependentUpon>signup.aspx</DependentUpon>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Items\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

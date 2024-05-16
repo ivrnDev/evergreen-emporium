@@ -5,18 +5,17 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace EvergreenEmporium_group11
+namespace EvergreenEmporium_group11.redirect
 {
-    public partial class home : System.Web.UI.Page
+    public partial class contact_success_user : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
-
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void returnHome_Click(object sender, EventArgs e)
         {
-            Response.Redirect("login.aspx");
+            Response.Redirect("/user/home.aspx");
         }
     }
 }
